@@ -117,7 +117,7 @@ class _AuthPageState extends State<AuthPage> {
                 ),
                 const SizedBox(height: 40),
 
-                // Form Container
+                
                 Container(
                   padding: const EdgeInsets.all(25),
                   decoration: BoxDecoration(
@@ -159,7 +159,7 @@ class _AuthPageState extends State<AuthPage> {
                       ),
                       const SizedBox(height: 30),
 
-                      // Tombol Utama (Teks berubah sesuai mode)
+                     
                       ElevatedButton(
                         onPressed: isLoading ? null : handleAuth,
                         style: ElevatedButton.styleFrom(
