@@ -13,9 +13,15 @@ Sistem Informasi A '24 |
 
 # 📌 Tampilan Aplikasi HealthTracker 
 
+<img width="500" height="863" alt="Image" src="https://github.com/user-attachments/assets/9f22c0aa-710f-474a-8ad4-37bf7fedd350" />
+
+<img width="500" height="889" alt="Image" src="https://github.com/user-attachments/assets/0feeb49b-31ce-43a8-ab90-2bd64719417e" />
 
 
-<img width="450" height="1014" alt="image" src="https://github.com/user-attachments/assets/3bf9c03f-b6d5-41b8-b664-6f197a9e8013" />
+#  📜 Deskripsi Aplikasi Healthtracker
+
+HealthTracker merupakan aplikasi yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur. Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat yang telah atau akan dikonsumsi. HealthTracker juga dilengkapi dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal.Dengan adanya fitur kategori ini, pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan.
+/>
 
 
 #  📜 Deskripsi Aplikasi Healthtracker
