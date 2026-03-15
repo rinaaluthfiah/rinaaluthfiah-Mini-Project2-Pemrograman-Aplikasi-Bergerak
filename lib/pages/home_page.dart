@@ -13,6 +13,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    super.initState();
+    Provider.of<DataObat>(context, listen: false).ambilData();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final dataObat = Provider.of<DataObat>(context);
     final filtered = dataObat.byKategori(widget.golongan);
@@ -36,96 +42,112 @@ class _HomePageState extends State<HomePage> {
         },
       ),
 
-      body: ListView.builder(
-        padding: const EdgeInsets.all(16),
-        itemCount: filtered.length,
-        itemBuilder: (context, index) {
-          final data = filtered[index];
-
-          return Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                colors: [Color(0xFFFFE3F1), Color(0xFFEEDCFF)],
+      body: filtered.isEmpty
+          ? const Center(
+              child: Text(
+                "Belum ada data obat",
+                style: TextStyle(fontSize: 16),
               ),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            )
+          : ListView.builder(
+              padding: const EdgeInsets.all(16),
+              itemCount: filtered.length,
+              itemBuilder: (context, index) {
+                final data = filtered[index];
+                return Container(
+                  margin: const EdgeInsets.only(bottom: 12),
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFFFFE3F1), Color(0xFFEEDCFF)],
+                    ),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        data.nama,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              data.nama,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                            const SizedBox(height: 6),
+
+                            Text("${data.dosis} • ${data.frekuensi}"),
+                            Text("Tanggal: ${data.tanggal}"),
+                            Text(
+                              "Jam: ${data.jam.length >= 5 ? data.jam.substring(0, 5) : data.jam}",
+                            ),
+                            const SizedBox(height: 6),
+
+                            Text(
+                              data.sudahDiminum
+                                  ? "✅ Sudah diminum"
+                                  : "⏰ Belum diminum",
+                              style: TextStyle(
+                                color: data.sudahDiminum
+                                    ? Colors.green
+                                    : Colors.orange,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: 6),
 
-                      Text("${data.dosis} • ${data.frekuensi}"),
-                      Text("Tanggal: ${data.tanggal}"),
-                      Text("Jam: ${data.jam}"),
-                      const SizedBox(height: 6),
-                      Text(
-                        data.sudahDiminum
-                            ? "✅ Sudah diminum"
-                            : "⏰ Belum diminum",
-                        style: TextStyle(
-                          color: data.sudahDiminum
-                              ? Colors.green
-                              : Colors.orange,
-                        ),
+                      Column(
+                        children: [
+                          IconButton(
+                            icon: Icon(
+                              data.sudahDiminum
+                                  ? Icons.check_circle
+                                  : Icons.radio_button_unchecked,
+                              color: data.sudahDiminum
+                                  ? Colors.green
+                                  : Colors.grey,
+                            ),
+                            onPressed: () {
+                              dataObat.toggleMinum(data);
+                            },
+                          ),
+                          IconButton(
+                            icon: const Icon(
+                              Icons.edit,
+                              color: Color.fromARGB(255, 153, 139, 147),
+                            ),
+                            onPressed: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => FormPage(
+                                    golongan: widget.golongan,
+                                    obat: data, // HARUS diteruskan
+                                  ),
+                                ),
+                              );
+
+                              if (!mounted) return;
+                              await Provider.of<DataObat>(context, listen: false).ambilData();
+                            },
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: () {
+                              dataObat.hapus(data);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ),
-
-                Column(
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        data.sudahDiminum
-                            ? Icons.check_circle
-                            : Icons.radio_button_unchecked,
-                        color: data.sudahDiminum ? Colors.green : Colors.grey,
-                      ),
-                      onPressed: () {
-                        dataObat.toggleMinum(data);
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.edit,
-                        color: Color.fromARGB(255, 153, 139, 147),
-                      ),
-                      onPressed: () async {
-                        await Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) =>
-                                FormPage(golongan: widget.golongan, obat: data),
-                          ),
-                        );
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.delete, color: Colors.red),
-                      onPressed: () {
-                        dataObat.hapus(data);
-                      },
-                    ),
-                  ],
-                ),
-              ],
+                );
+              },
             ),
-          );
-        },
-      ),
     );
   }
 }

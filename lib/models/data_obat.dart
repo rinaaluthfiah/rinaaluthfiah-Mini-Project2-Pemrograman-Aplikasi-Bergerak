@@ -1,62 +1,108 @@
 import 'package:flutter/material.dart';
-import '../models/obat.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'obat.dart';
 
 class DataObat extends ChangeNotifier {
-  List<Obat> semuaObat = [
-    Obat(
-      nama: "Paracetamol",
-      dosis: "500 mg",
-      frekuensi: "2x sehari",
-      tanggal: "06-01-2026",
-      golongan: "Obat Bebas",
-      jam: "08:00",
-      sudahDiminum: false,
-    ),
-    Obat(
-      nama: "Antimo",
-      dosis: "50 mg",
-      frekuensi: "1x sehari",
-      tanggal: "07-01-2026",
-      golongan: "Obat Bebas Terbatas",
-      jam: "10:00",
-    ),
-    Obat(
-      nama: "Omeprazole",
-      dosis: "20 mg",
-      frekuensi: "1x sehari",
-      tanggal: "08-01-2026",
-      golongan: "Obat Keras",
-      jam: "06:30",
-    ),
-  ];
+  final supabase = Supabase.instance.client;
 
-  void tambah(Obat obat) {
-    semuaObat.add(obat);
+  List<Obat> semuaObat = [];
+
+  Future<void> ambilData() async {
+    final response = await supabase.from('obat').select();
+
+    semuaObat = (response as List).map((data) {
+      return Obat(
+        id: data['id'],
+        nama: data['nama'],
+        dosis: data['dosis'],
+        frekuensi: data['frekuensi'],
+        golongan: data['golongan'],
+        tanggal: data['tanggal'],
+        jam: data['jam'],
+        sudahDiminum: data['sudah_diminum'] ?? false,
+      );
+    }).toList();
+
     notifyListeners();
   }
-  void hapus(Obat obat) {
-    semuaObat.remove(obat);
-    notifyListeners();
-  }
-  void toggleMinum(Obat obat) {
-    obat.sudahDiminum = !obat.sudahDiminum;
-    notifyListeners();
-  }
-  void edit(Obat lama, Obat baru) {
-    int index = semuaObat.indexOf(lama);
-    if (index != -1) {
-      semuaObat[index] = baru;
-      notifyListeners();
+
+
+  Future<void> tambah(Obat obat) async {
+    try {
+      await supabase.from('obat').insert({
+        'nama': obat.nama,
+        'dosis': obat.dosis,
+        'frekuensi': obat.frekuensi,
+        'tanggal': obat.tanggal,
+        'golongan': obat.golongan,
+        'jam': obat.jam,
+        'sudah_diminum': obat.sudahDiminum,
+      });
+      await ambilData();
+    } catch (e) {
+      debugPrint('ERROR SIMPAN DATA: $e');
     }
   }
+
+
+  Future<void> hapus(Obat obat) async {
+    if (obat.id == null) return;
+    await supabase.from('obat').delete().eq('id', obat.id!);
+
+    await ambilData();
+  }
+
+
+  Future<void> toggleMinum(Obat obat) async {
+    if (obat.id == null) return;
+
+    await supabase
+        .from('obat')
+        .update({'sudah_diminum': !obat.sudahDiminum})
+        .eq('id', obat.id!);
+
+    await ambilData();
+  }
+
+
+  Future<void> edit(Obat lama, Obat baru) async {
+    if (lama.id == null) return;
+
+    await supabase
+        .from('obat')
+        .update({
+          'nama': baru.nama,
+          'dosis': baru.dosis,
+          'frekuensi': baru.frekuensi,
+          'golongan': baru.golongan,
+          'tanggal': baru.tanggal,
+          'jam': baru.jam,
+        })
+        .eq('id', lama.id!);
+
+    await ambilData();
+  }
+
+
   List<Obat> byKategori(String kategori) {
     return semuaObat.where((o) => o.golongan == kategori).toList();
   }
 
   int totalObat() => semuaObat.length;
+
   int totalKategori() {
     return semuaObat.map((e) => e.golongan).toSet().length;
   }
+
+  int sudahDiminum() {
+    return semuaObat.where((o) => o.sudahDiminum).length;
+  }
+
+  int belumDiminum() {
+    return semuaObat.where((o) => !o.sudahDiminum).length;
+  }
+
+
   List<Obat> terbaru() {
     return semuaObat.reversed.take(2).toList();
   }

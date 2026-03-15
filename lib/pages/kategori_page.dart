@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/data_obat.dart';
 import '../models/obat.dart';
 import 'home_page.dart';
+import '../main.dart';
 
 class KategoriPage extends StatelessWidget {
   const KategoriPage({super.key});
@@ -13,9 +14,14 @@ class KategoriPage extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFFFFE3F1), Color(0xFFEEDCFF)],
+            colors: Theme.of(context).brightness == Brightness.dark
+                ? [const Color(0xFF1E1E1E), const Color(0xFF2C2C2C)]
+                : [
+                    const Color.fromARGB(255, 241, 218, 231),
+                    const Color.fromARGB(255, 243, 216, 238),
+                  ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -29,8 +35,8 @@ class KategoriPage extends StatelessWidget {
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromRGBO(240, 172, 201, 1),
-                    Color.fromARGB(255, 241, 134, 202),
+                    Color.fromRGBO(254, 199, 223, 1),
+                    Color.fromARGB(255, 237, 153, 200),
                   ],
                 ),
                 borderRadius: BorderRadius.only(
@@ -38,25 +44,56 @@ class KategoriPage extends StatelessWidget {
                   bottomRight: Radius.circular(15),
                 ),
               ),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "HealthTracker 💊",
-                    style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "HealthTracker 💊",
+                        style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 216, 114, 160),
+                        ),
+                      ),
+                      SizedBox(height: 6),
+                      Text(
+                        "Catatan Konsumsi Obatmu",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 250, 248, 249),
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 6),
-                  Text(
-                    "Catatan Konsumsi Obatmu",
-                    style: TextStyle(color: Colors.white),
+
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: IconButton(
+                      icon: Icon(
+                        Theme.of(context).brightness == Brightness.dark
+                            ? Icons.light_mode
+                            : Icons.dark_mode,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {
+                        if (Theme.of(context).brightness == Brightness.dark) {
+                          MyApp.setTheme(context, ThemeMode.light);
+                        } else {
+                          MyApp.setTheme(context, ThemeMode.dark);
+                        }
+                      },
+                    ),
                   ),
                 ],
               ),
             ),
+
             const SizedBox(height: 20),
 
             Padding(
@@ -109,14 +146,33 @@ class KategoriPage extends StatelessWidget {
                 mainAxisSpacing: 12,
                 childAspectRatio: 1.1,
                 children: [
-                  _kategoriBox(context, "Obat Bebas", const Color(0xFF92CCA0)),
+                  _kategoriBox(
+                    context,
+                    "Obat Bebas",
+                    const Color(0xFF5FA77B),
+                    Icons.medication,
+                  ),
+
                   _kategoriBox(
                     context,
                     "Obat Bebas Terbatas",
-                    const Color(0xFF75ADE2),
+                    const Color(0xFFE58E3A),
+                    Icons.warning_amber_rounded,
                   ),
-                  _kategoriBox(context, "Obat Keras", const Color(0xFFCE5555)),
-                  _kategoriBox(context, "Obat Herbal", const Color(0xFF839F8D)),
+
+                  _kategoriBox(
+                    context,
+                    "Obat Keras",
+                    const Color(0xFFE05C65),
+                    Icons.local_hospital,
+                  ),
+
+                  _kategoriBox(
+                    context,
+                    "Obat Herbal",
+                    const Color(0xFF6BBF7B),
+                    Icons.spa,
+                  ),
                 ],
               ),
             ),
@@ -125,118 +181,149 @@ class KategoriPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget pengingatObat(DataObat dataObat) {
-    final belum = dataObat.semuaObat
-        .where((o) => o.sudahDiminum == false)
-        .toList();
+Widget pengingatObat(DataObat dataObat) {
+  final belum = dataObat.semuaObat
+      .where((o) => o.sudahDiminum == false)
+      .toList();
 
-    if (belum.isEmpty) return const SizedBox();
-    final obat = belum.first;
-    return Container(
-      margin: const EdgeInsets.all(20),
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [Color(0xFFFFC1E3), Color(0xFFE0BBFF)],
+  if (belum.isEmpty) return const SizedBox();
+  final obat = belum.first;
+  return Container(
+    margin: const EdgeInsets.all(20),
+    padding: const EdgeInsets.all(20),
+    decoration: BoxDecoration(
+      gradient: const LinearGradient(
+        colors: [
+          Color.fromARGB(255, 233, 188, 213),
+          Color.fromARGB(255, 240, 186, 230),
+        ],
+      ),
+      borderRadius: BorderRadius.circular(20),
+    ),
+    child: Row(
+      children: [
+        const Icon(Icons.notifications_active, color: Colors.white, size: 40),
+        const SizedBox(width: 15),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "Pengingat Obat",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              Text(
+                "${obat.nama} - Jam ${obat.jam}",
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 255, 255, 255),
+                ),
+              ),
+            ],
+          ),
         ),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        children: [
-          const Icon(Icons.notifications_active, color: Colors.white, size: 40),
-          const SizedBox(width: 15),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  "Pengingat Obat",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-                Text(
-                  "${obat.nama} - Jam ${obat.jam}",
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+      ],
+    ),
+  );
+}
 
-  Widget _infoBox(String title, String value) {
-    return Container(
-      padding: const EdgeInsets.all(14),
+Widget _infoBox(String title, String value) {
+  return Container(
+    padding: const EdgeInsets.all(14),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(18),
+    ),
+    child: Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
+        Text(title),
+      ],
+    ),
+  );
+}
+
+Widget _riwayat(Obat obat) {
+  return Container(
+    margin: const EdgeInsets.only(bottom: 8),
+    padding: const EdgeInsets.all(10),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(14),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [Text(obat.nama), Text(obat.tanggal)],
+    ),
+  );
+}
+
+Widget _kategoriBox(
+  BuildContext context,
+  String title,
+  Color warnaIcon,
+  IconData icon,
+) {
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => HomePage(golongan: title)),
+      );
+    },
+    child: Container(
+      padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(18),
+        color: const Color(0xFFFFD6EC),
+        borderRadius: BorderRadius.circular(28),
       ),
-      child: Column(
-        children: [
-          Text(
-            value,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          Text(title),
-        ],
-      ),
-    );
-  }
-
-  Widget _riwayat(Obat obat) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [Text(obat.nama), Text(obat.tanggal)],
-      ),
-    );
-  }
-
-  Widget _kategoriBox(BuildContext context, String title, Color warna) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => HomePage(golongan: title)),
-        );
-      },
       child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 18),
         decoration: BoxDecoration(
-          color: warna,
-          borderRadius: BorderRadius.circular(25),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(22),
           boxShadow: const [
             BoxShadow(
-              color: Colors.white,
-              blurRadius: 12,
-              offset: Offset(0, 6),
+              color: Colors.black12,
+              blurRadius: 6,
+              offset: Offset(0, 3),
             ),
           ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.medication, size: 40),
+            Container(
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: warnaIcon.withOpacity(0.15),
+              ),
+              child: Icon(icon, size: 30, color: warnaIcon),
+            ),
+
             const SizedBox(height: 10),
+
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 15,
+                color: warnaIcon,
+              ),
             ),
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
 }
