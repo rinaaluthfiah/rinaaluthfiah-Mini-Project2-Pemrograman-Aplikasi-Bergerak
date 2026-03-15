@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# healthtrack
-
-A new Flutter project.
-=======
 
 # Healthtracker
 
@@ -17,6 +12,7 @@ A new Flutter project.
 Sistem Informasi A '24 |
 
 # 📌 Tampilan Aplikasi HealthTracker 
+
 
 
 <img width="450" height="1014" alt="image" src="https://github.com/user-attachments/assets/3bf9c03f-b6d5-41b8-b664-6f197a9e8013" />
