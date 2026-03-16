@@ -14,7 +14,11 @@ Sistem Informasi A '24 |
 
 #  📜 Deskripsi Aplikasi Healthtracker
 
-HealthTracker merupakan aplikasi yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur. Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat yang telah atau akan dikonsumsi. HealthTracker juga dilengkapi dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal.Dengan adanya fitur kategori ini, pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan.
+˜”*° HealthTracker merupakan aplikasi yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur.
+Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat yang telah atau akan dikonsumsi.HealthTracker juga dilengkapi
+dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal. Dengan adanya fitur kategori ini, 
+pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat 
+konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan. 
 
 
 # 🌟 Fitur Aplikasi HealthTracker
