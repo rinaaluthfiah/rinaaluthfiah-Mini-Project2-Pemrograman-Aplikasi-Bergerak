@@ -23,7 +23,7 @@ seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal. Dengan ada
 HealthTracker dirancang dengan berbagai fitur yang mendukung pengelolaan riwayat konsumsi obat secara terstruktur.
 Fitur utama dalam aplikasi ini mengacu pada konsep CRUD (Create, Read, Update, Delete) yang menjadi dasar dalam pengelolaan data.
 
-## 1️⃣  Registrasi ##
+## 1️⃣  Registrasi 🔐 ##
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fe818b02-8ee3-4462-a3ac-ae195745ee04" width="46%">
@@ -123,20 +123,19 @@ Pengguna bisa menandai apakah obat sudah diminum atau belum lewat tombol di seti
 
 HealthTracker mengelompokkan obat berdasarkan kategori seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal, agar pengguna bisa lebih mudah mengatur dan menemukan obat sesuai jenisnya.
 
-
 # 📲 Widget Yang Digunakan
 
 ## 1️. MaterialApp ##
 
-<img width="450" height="568" alt="image" src="https://github.com/user-attachments/assets/d85e80fc-f6df-4061-9a33-d412ff4032a4" />
+<img width="450" height="338" alt="Image" src="https://github.com/user-attachments/assets/f6202f02-6053-48ac-8858-a9e373b61d1b" />
 
-Widget utama untuk memulai aplikasi Flutter.
+Widget utama yang dasar dari seluruh aplikasi Flutter. Pada aplikasi HealthTracker, MaterialApp digunakan untuk mengatur tema aplikasi dan menentukan halaman awal yaitu halaman Login.
 
 ## 2. Scaffold ##
 
-<img width="450" height="266" alt="image" src="https://github.com/user-attachments/assets/aecd5f1f-7526-49c0-a871-65dc5635ca60" />
+<img width="450" height="362" alt="Image" src="https://github.com/user-attachments/assets/7fac4197-18b6-499e-a6fe-faf3e84ebaae" />
 
-Scaffold menyediakan kerangka halaman termasuk AppBar, body, dan tombol aksi. 
+Scaffold digunakan sebagai kerangka dasar halaman yang menyediakan struktur seperti AppBar, body, dan FloatingActionButton.
 
 ## 3. AppBar ##
 
@@ -147,16 +146,14 @@ AppBar  bagian atas aplikasi yang menampilkan judul halaman dan warna background
 
 ## 4. ListView.builder ##
 
-<img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/7683e60e-ad26-4edd-8ea7-9ddc51ce5d35" />
+<img width="450" height="244" alt="Image" src="https://github.com/user-attachments/assets/05dc6b2a-53d3-4555-b841-98346228c8e0" />
 
 
-Menampilkan daftar data dalam bentuk scroll, dipakai untuk:
-- Menampilkan riwayat obat
-- Menampilkan list kategori
+Digunakan untuk menampilkan daftar obat secara dinamis dari database Supabase.
 
 ## 5. GridView ##
 
-<img width="450" height="400" alt="image" src="https://github.com/user-attachments/assets/3a384481-5efb-47db-b6d8-59d634b0af5c" />
+<img width="450" height="287" alt="Image" src="https://github.com/user-attachments/assets/235538ed-7a8c-47e9-aa5a-c4a108261d1a" />
 
 
 Menampilkan kategori obat dalam bentuk  kotak-kotak (grid) membagi menjadi dua kolom agar lebih rapi dan mudah dipilih, seperti (Obat keras, Obat herbal,dll)
@@ -192,14 +189,13 @@ Digunakan untuk menginput seperti Nama obat, Dosis, Frekuensi Jam, dll
 
 ## 10. ElevatedButton ##
 
-
-<img width="450" height="199" alt="image" src="https://github.com/user-attachments/assets/5125400b-e0cd-47d7-818c-fa6ced03344a" />
+<img width="459" height="277" alt="Image" src="https://github.com/user-attachments/assets/134183b1-9358-4bce-ac9c-47b7559fb48c" />
 
 ElevatedButton adalah tombol utama yang biasanya digunakan untuk aksi seperti menyimpan data
 
 ## 11. FloatingActionButton ##
 
-<img width="450" height="282" alt="image" src="https://github.com/user-attachments/assets/35a8d733-4408-4dc5-8f34-2a5a469b3736" />
+<img width="450" height="261" alt="Image" src="https://github.com/user-attachments/assets/576cde18-b9ce-4854-b7be-1c8f84a73bf2" />
 
 FloatingActionButton adalah tombol  yang biasanya berada di pojok kanan bawah.
 Digunakan untuk membuka halaman tambah data obat.
@@ -229,7 +225,7 @@ BoxDecoration digunakan di dalam Container untuk mengatur tampilan seperti Warna
 
 <img width="450" height="114" alt="image" src="https://github.com/user-attachments/assets/37e0875d-e451-4f86-a261-3a8affe90ddd" />
 
-Digunakan untuk berpindah halaman 
+Digunakan untuk berpindah halaman satu ke halaman lain.
 
 
 ## 16. LinearGradient ##
@@ -238,9 +234,24 @@ Digunakan untuk berpindah halaman
 
 Digunakan untuk memberi efek warna gradasi.
 
+# 🗄️ Database
 
-## 17. DropdownButtonFormField ##
+Aplikasi menggunakan supabase sebagai sebagai backend database.
 
+Tabel yang digunakan:
+
+<img width="450" height="489" alt="Image" src="https://github.com/user-attachments/assets/bc774aea-9477-429c-8ef8-7a1031e60e8f" />
+
+
+# ⚙️ Teknologi yang Digunakan
+
+﹗  Flutterer - Framework untuk membangun aplikasi mobile.
+
+✦ Supabase -  Sebagai backend dan database untuk menyimpan serta mengelola data obat dan autentikasi pengguna.
+
+.☘︎ ݁˖ Google Fonts  -  Mempercantik tampilan teks pada aplikasi.
+
+🗁 Flutter Dotenv -  menyimpan Supabase URL dan API Key secara aman di file .env.
 
 
 
