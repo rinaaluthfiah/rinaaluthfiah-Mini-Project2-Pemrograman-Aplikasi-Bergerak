@@ -14,14 +14,13 @@ Sistem Informasi A '24 |
 
 #  📜 Deskripsi Aplikasi Healthtracker
 
-˜”*° HealthTracker merupakan aplikasi yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur.
-Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat yang telah atau akan dikonsumsi.HealthTracker juga dilengkapi
-dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal. Dengan adanya fitur kategori ini, 
-pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat 
-konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan. 
-
+HealthTracker merupakan aplikasi mobile yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur. Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat 
+yang telah atau akan dikonsumsi. HealthTracker juga dilengkapi dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal. Dengan adanya fitur kategori ini, pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan.
 
 # 🌟 Fitur Aplikasi HealthTracker
+
+HealthTracker dirancang dengan berbagai fitur yang mendukung pengelolaan riwayat konsumsi obat secara terstruktur.
+Fitur utama dalam aplikasi ini mengacu pada konsep CRUD (Create, Read, Update, Delete) yang menjadi dasar dalam pengelolaan data.
 
 ## 1️⃣  Register ##
 
@@ -30,22 +29,23 @@ konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan 
   <img src="https://github.com/user-attachments/assets/1190c96f-7ca8-413b-bfd4-9f9fa15bf530" width="44%">
 </p>
 
-
-HealthTracker dirancang dengan berbagai fitur yang mendukung pengelolaan riwayat konsumsi obat secara terstruktur.
-Fitur utama dalam aplikasi ini mengacu pada konsep CRUD (Create, Read, Update, Delete) yang menjadi dasar dalam pengelolaan data.
+Halaman Register digunakan untuk membuat akun baru pada aplikasi HealthTracker. Pada halaman ini, pengguna diminta untuk memasukkan email dan password melalui form yang tersedia. Data yang dimasukkan kemudian diproses menggunakan Supabase Authentication sehingga akun dapat tersimpan dengan aman di sistem. Setelah proses registrasi berhasil, pengguna dapat melakukan login untuk mengakses seluruh fitur yang tersedia dalam aplikasi.
 
 
 ## 2️⃣  Login  ##
 
-
  <img src="https://github.com/user-attachments/assets/c305e2c0-d112-4196-8ae1-a93c6edc0a6c" width="48%">
 
- <img src="https://github.com/user-attachments/assets/8f99832f-7248-4816-9156-3a5c537fbea2" width="46%">
+<img src="https://github.com/user-attachments/assets/8f99832f-7248-4816-9156-3a5c537fbea2" width="46%">
 
 
-Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pada halaman ini, pengguna dapat mengisi beberapa informasi penting seperti nama obat, dosis, frekuensi konsumsi, tanggal konsumsi, serta jam konsumsi. Data yang telah diinput akan disimpan ke dalam daftar riwayat sesuai dengan kategori obat yang dipilih. Fitur ini memastikan setiap konsumsi obat dapat tercatat dengan baik.
+Halaman Login digunakan oleh pengguna untuk masuk ke dalam aplikasi HealthTracker dengan memasukkan email dan password yang telah terdaftar. Data yang dimasukkan akan diverifikasi melalui Supabase Authentication. Jika email atau kata sandi yang dimasukkan salah, maka akan muncul pesan “Invalid login credentials” sebagai pemberitahuan bahwa data login tidak valid. 
 
-<img width="450" height="900" alt="Image" src="https://github.com/user-attachments/assets/c6c8c382-45d2-40d1-93fb-3a4e7a2b142a" />
+
+<img src="https://github.com/user-attachments/assets/5e3a6ce9-26a7-49d9-b7ad-a9cf1336a197" width="48%">
+
+
+Jika proses login berhasil, akan muncul notifikasi “Login Berhasil” di halaman utama dan pengguna bisa langsung mengakses fitur aplikasi.
 
 ##  3️⃣ Light Mode dan Dark Mode  ##
 
@@ -53,92 +53,69 @@ Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pa
 
 <img src="https://github.com/user-attachments/assets/1238399f-4beb-413b-94df-d1057a9af416" width="44%">
 
-
+Aplikasi HealthTracker juga menyediakan fitur Light Mode dan Dark Mode yang memungkinkan pengguna mengganti tampilan tema aplikasi sesuai yang diinginkan Pengguna dapat beralih antara mode terang dan mode gelap melalui tombol yang tersedia pada halaman utama di pojok sebelah kanan.  Jika menekan tombol 🌙  makan tampilannya akan menjadi gelap, tetapi jika memilih  ☀️ tampilannya akan terang. Fitur ini bertujuan untuk meningkatkan kenyamanan pengguna saat menggunakan aplikasi.
 
 ## 1️⃣ Fitur Tambah Data (Create) ##
 
-<img width="490" height="906" alt="Image" src="https://github.com/user-attachments/assets/3ae55fb6-a7cc-4d50-bcad-8dca3e74b31a" />
+
+<img src="https://github.com/user-attachments/assets/3ae55fb6-a7cc-4d50-bcad-8dca3e74b31a" width="47%">
+
+<img src="https://github.com/user-attachments/assets/60d4e128-8b09-4a17-a4e0-a1590ebb24e8" width="47%">
 
 
 Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pada halaman ini, pengguna dapat mengisi beberapa informasi penting seperti nama obat, dosis, frekuensi konsumsi, tanggal konsumsi, serta jam konsumsi. Data yang telah diinput akan disimpan ke dalam daftar riwayat sesuai dengan kategori obat yang dipilih. Fitur ini memastikan setiap konsumsi obat dapat tercatat dengan baik.
 
-
-
-#  📜 Deskripsi Aplikasi Healthtracker
-
-HealthTracker merupakan aplikasi yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur. Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat yang telah atau akan dikonsumsi. HealthTracker juga dilengkapi dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal.Dengan adanya fitur kategori ini, pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan.
-/>
-
-
-#  📜 Deskripsi Aplikasi Healthtracker
-
-HealthTracker merupakan aplikasi yang dirancang untuk membantu pengguna dalam mencatat, mengelola, dan memantau riwayat konsumsi obat secara terstruktur. 
-Aplikasi ini menyediakan fitur  untuk menambahkan, menampilkan, mengubah, dan menghapus  data obat yang telah atau akan dikonsumsi. HealthTracker juga dilengkapi
-dengan sistem pengelompokan berdasarkan kategori obat, seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal.
-Dengan adanya fitur kategori ini, pengguna dapat lebih mudah mengelompokkan data obat dengan lebih rapi dan mudah diakses. Selain itu, aplikasi ini 
-menyediakan fitur pengingat konsumsi obat serta menampilkan riwayat konsumsi terbaru guna membantu pengguna dalam menjaga konsistensi dan kepatuhan terhadap jadwal pengobatan.
-
-
-# 🌟 Fitur Aplikasi HealthTracker
-
-HealthTracker dirancang dengan berbagai fitur yang mendukung pengelolaan riwayat konsumsi obat secara terstruktur.
-Fitur utama dalam aplikasi ini mengacu pada konsep CRUD (Create, Read, Update, Delete) yang menjadi dasar dalam pengelolaan data.
-
-## 1️⃣ Fitur Tambah Data (Create) ##
-
-<img width="450" height="1001" alt="image" src="https://github.com/user-attachments/assets/8092b5c8-8a35-46fe-9e20-e130dabfb8cd" />
-
-Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pada halaman ini, pengguna dapat mengisi beberapa informasi penting seperti nama obat, dosis, frekuensi konsumsi, tanggal konsumsi, serta jam konsumsi. Data yang telah diinput akan disimpan ke dalam daftar riwayat sesuai dengan kategori obat yang dipilih. Fitur ini memastikan setiap konsumsi obat dapat tercatat dengan baik.
 
 ## 2️⃣ Fitur Tampilkan Data (Read) ##
 
-<img width="450" height="1005" alt="image" src="https://github.com/user-attachments/assets/804c07f6-1462-4e1e-8c57-09338abfe30f" />
+<img src="https://github.com/user-attachments/assets/20778c38-b34f-4519-a20f-060210668c18" width="47%">
 
 
-Semua data obat yang telah dimasukkan akan ditampilkan secara tersusun berdasarkan kategori. Setiap item menampilkan informasi lengkap seperti nama obat, dosis, frekuensi, tanggal, jam konsumsi.
-
-<img width="450" height="774" alt="image" src="https://github.com/user-attachments/assets/723ce3c7-8fa8-498a-882a-c1f23b2db2d5" />
+<img src="https://github.com/user-attachments/assets/047207fa-9aa6-4d6b-93ac-1a029bb0835c" width="47%">
 
 
-Selain itu, halaman utama juga menampilkan ringkasan total obat dan jumlah kategori yang tersedia, sehingga pengguna bisa melihat gambaran umum data yang tersimpan serta riwayat konsumsi obat terbaru.
+Semua data obat yang telah dimasukkan akan ditampilkan secara tersusun berdasarkan kategori. Setiap item menampilkan informasi lengkap seperti nama obat, dosis, frekuensi, tanggal, jam konsumsi
 
 
 ## 3️⃣ Fitur Edit Data (Update) ##
 
-<img width="450" height="1014" alt="image" src="https://github.com/user-attachments/assets/0f5cba23-406b-496f-bac8-01a08089e7c9" />
+<img src="https://github.com/user-attachments/assets/c9a908df-a95f-481c-ace0-e2675b476285" width="47%">
 
-HealthTracker menyediakan fitur agar penguna dapat dengan mudah mengubah data obat yang sudah ada jika terjadi kesalahan dalam menginput. Dengan menekan tombol edit pada obat yang ingin diperbarui, maka pengguna akan diarahkan ke halaman yang sudah terisi dengan data sebelumnya. Setelah melakukan perubahan sesuai kebutuhan, pengguna dapat menyimpan kembali data tersebut agar informasinya selalu akurat dan terbaru.
+HealthTracker menyediakan fitur agar penguna dapat dengan mudah mengubah data obat yang sudah ada, jika terjadi kesalahan dalam menginput atau hal yang lain. Dengan menekan tombol edit pada obat yang ingin diperbarui, maka pengguna akan diarahkan ke halaman yang sudah terisi dengan data sebelumnya. Setelah melakukan perubahan, pengguna dapat menyimpan kembali data tersebut dengan menekan tombol update, maka otomatis data obat akan  berubah  akurat dan terperbarui.
 
 
 ## 4️⃣ Fitur Hapus Data (Delete) ##
 Sebelum Dihapus 
 
-<img width="450" height="1007" alt="Screenshot 2026-02-28 130620" src="https://github.com/user-attachments/assets/6651e66d-3cb6-4c35-ad1f-6e821cf6234f" />
+<img src="https://github.com/user-attachments/assets/d267d82c-1af0-4cd2-be25-afb06c6175a7" width="47%">
 
 
 Setelah Dihapus 
 
+<img src="https://github.com/user-attachments/assets/94cc6f3f-2c15-4932-b00e-4d9ec16d9afa" width="47%">
 
-<img width="450" height="1011" alt="image" src="https://github.com/user-attachments/assets/d6cbd65f-45cd-4bac-859e-955795c7ae60" />
 
-Setiap data obat dapat dihapus melalui tombol sepereti icon sampah berwarna merah yang tersedia pada daftar riwayat. Fitur ini membantu pengguna dalam mengelola data agar tetap relevan dan tidak menumpuk dengan informasi yang sudah tidak diperlukan.
-
+Setiap data obat dapat dihapus melalui tombol berikon tempat sampah berwarna merah yang tersedia pada daftar riwayat obat. Fitur ini memudahkan pengguna untuk menghapus data obat yang sudah tidak diperlukan atau obat yang sudah dikonsumsi, sehingga daftar riwayat tetap rapi, relevan, dan tidak menumpuk dengan informasi yang tidak lagi digunakan. 
 
 ## 5️⃣ Fitur Pengingat Konsumsi Obat (tambahan) ##
 
-<img width="450" height="603" alt="image" src="https://github.com/user-attachments/assets/16126410-2212-4fae-aa55-5feac9841be7" />
+
+<img width="400" height="342" alt="Image" src="https://github.com/user-attachments/assets/f061be71-c6d2-4999-8709-283c5ec86641" />
 
 Aplikasi menampilkan pengingat obat yang belum diminum pada halaman utama. Fitur ini membantu pengguna untuk lebih disiplin dalam mengikuti jadwal konsumsi obat dan meminimalkan risiko lupa minum obat.
 
 ##  6️⃣ Fitur Status Konsumsi Obat (tambahan) ##
 
-<img width="450" height="1020" alt="image" src="https://github.com/user-attachments/assets/9bd51d6e-25e0-4844-bd66-6de8841427e5" />
+<img width="400" height="300" alt="Image" src="https://github.com/user-attachments/assets/4486b865-fd61-44d3-a76c-e028fb58126c" />
+
+<img width="400" height="300" alt="Image" src="https://github.com/user-attachments/assets/cdf5d8f3-4444-43fc-bf7c-5efe5a89bcb1" />
 
 Pengguna bisa menandai apakah obat sudah diminum atau belum lewat tombol di setiap item. Statusnya ditunjukkan dengan warna atau ikon yang berbeda, sehingga lebih gampang bagi pengguna untuk melihat obat mana yang sudah dikonsumsi.
 
 ## 7️⃣ Fitur Kategori Obat (tambahan) ##
 
-<img width="450" height="1017" alt="image" src="https://github.com/user-attachments/assets/f5cfc253-6a3f-4a72-a19d-0c78dff71ae8" />
+<img src="https://github.com/user-attachments/assets/0e877d33-e7a4-4809-8629-09d47f6f0add" width="47%">
+
 
 HealthTracker mengelompokkan obat berdasarkan kategori seperti Obat Bebas, Obat Bebas Terbatas, Obat Keras, dan Obat Herbal, agar pengguna bisa lebih mudah mengatur dan menemukan obat sesuai jenisnya.
 
@@ -255,8 +232,9 @@ Digunakan untuk berpindah halaman
 
 <img width="450" height="146" alt="image" src="https://github.com/user-attachments/assets/fd6122a6-e135-4107-8ab1-45792e6bdd60" />
 
-
 Digunakan untuk memberi efek warna gradasi.
+
+
 
 
 
