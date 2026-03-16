@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                                 MaterialPageRoute(
                                   builder: (_) => FormPage(
                                     golongan: widget.golongan,
-                                    obat: data, // HARUS diteruskan
+                                    obat: data, 
                                   ),
                                 ),
                               );
