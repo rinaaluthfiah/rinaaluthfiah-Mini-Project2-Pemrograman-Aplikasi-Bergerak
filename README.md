@@ -81,18 +81,20 @@ Semua data obat yang telah dimasukkan akan ditampilkan secara tersusun berdasark
 
 <img src="https://github.com/user-attachments/assets/c9a908df-a95f-481c-ace0-e2675b476285" width="47%">
 
+<img src="https://github.com/user-attachments/assets/74f09457-c0dc-49f3-ab48-b1f6a12bb153" width="48%">
+
 HealthTracker menyediakan fitur agar penguna dapat dengan mudah mengubah data obat yang sudah ada, jika terjadi kesalahan dalam menginput atau hal yang lain. Dengan menekan tombol edit pada obat yang ingin diperbarui, maka pengguna akan diarahkan ke halaman yang sudah terisi dengan data sebelumnya. Setelah melakukan perubahan, pengguna dapat menyimpan kembali data tersebut dengan menekan tombol update, maka otomatis data obat akan  berubah  akurat dan terperbarui.
 
 
 ## 4️⃣ Fitur Hapus Data (Delete) ##
 Sebelum Dihapus 
 
-<img src="https://github.com/user-attachments/assets/d267d82c-1af0-4cd2-be25-afb06c6175a7" width="47%">
+<img src="https://github.com/user-attachments/assets/d267d82c-1af0-4cd2-be25-afb06c6175a7" width="49%">
 
 
 Setelah Dihapus 
 
-<img src="https://github.com/user-attachments/assets/94cc6f3f-2c15-4932-b00e-4d9ec16d9afa" width="47%">
+<img src="https://github.com/user-attachments/assets/94cc6f3f-2c15-4932-b00e-4d9ec16d9afa" width="49%">
 
 
 Setiap data obat dapat dihapus melalui tombol berikon tempat sampah berwarna merah yang tersedia pada daftar riwayat obat. Fitur ini memudahkan pengguna untuk menghapus data obat yang sudah tidak diperlukan atau obat yang sudah dikonsumsi, sehingga daftar riwayat tetap rapi, relevan, dan tidak menumpuk dengan informasi yang tidak lagi digunakan. 
@@ -235,6 +237,7 @@ Digunakan untuk berpindah halaman
 Digunakan untuk memberi efek warna gradasi.
 
 
+## 17. DropdownButtonFormField ##
 
 
 
@@ -243,4 +246,3 @@ Digunakan untuk memberi efek warna gradasi.
 
 
 
->>>>>>> 3b00b641c4bba6bd5ad66a51120cc9284e44f70d
