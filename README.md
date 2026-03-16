@@ -41,7 +41,7 @@ Fitur utama dalam aplikasi ini mengacu pada konsep CRUD (Create, Read, Update, D
 
 Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pada halaman ini, pengguna dapat mengisi beberapa informasi penting seperti nama obat, dosis, frekuensi konsumsi, tanggal konsumsi, serta jam konsumsi. Data yang telah diinput akan disimpan ke dalam daftar riwayat sesuai dengan kategori obat yang dipilih. Fitur ini memastikan setiap konsumsi obat dapat tercatat dengan baik.
 
-<img width="500" height="903" alt="Image" src="https://github.com/user-attachments/assets/c6c8c382-45d2-40d1-93fb-3a4e7a2b142a" />
+<img width="450" height="900" alt="Image" src="https://github.com/user-attachments/assets/c6c8c382-45d2-40d1-93fb-3a4e7a2b142a" />
 
 ##  3️⃣ Light Mode dan Dark Mode  ##
 
@@ -53,7 +53,8 @@ Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pa
 
 ## 1️⃣ Fitur Tambah Data (Create) ##
 
-<img width="450" height="1001" alt="image" src="https://github.com/user-attachments/assets/8092b5c8-8a35-46fe-9e20-e130dabfb8cd" />
+<img width="490" height="906" alt="Image" src="https://github.com/user-attachments/assets/3ae55fb6-a7cc-4d50-bcad-8dca3e74b31a" />
+
 
 Aplikasi HealthTracker menyediakan halaman  untuk menambahkan data obat baru. Pada halaman ini, pengguna dapat mengisi beberapa informasi penting seperti nama obat, dosis, frekuensi konsumsi, tanggal konsumsi, serta jam konsumsi. Data yang telah diinput akan disimpan ke dalam daftar riwayat sesuai dengan kategori obat yang dipilih. Fitur ini memastikan setiap konsumsi obat dapat tercatat dengan baik.
 
